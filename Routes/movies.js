@@ -7,9 +7,9 @@ router.get('/',(req,res)=>{
     res.json({message:"THis is Home Route"});
 })
 
-router.post('/addcontacts',addMovie);
+router.post('/addmovie',addMovie);
 
-router.get('/getcontacts',getMovies);
+router.get('/getmovies',getMovies);
 
 router.get('/:id',getMovieById);
 

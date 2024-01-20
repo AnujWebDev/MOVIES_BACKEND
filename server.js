@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import moviesRouter from "./Routes/movies.js"
 import bodyparser from "express";
 import { config } from "dotenv";
+import cors from 'cors';
 
 const app = express();
 app.use(bodyparser.json());
@@ -10,6 +11,13 @@ app.use(bodyparser.json());
 config({
     path:'.env'
 })
+
+app.use(cors({
+    origin:"http://localhost:5173",
+    methods:["GET","POST","PUT","DELETE"],
+    credentials:true
+}))
+
 //mongoDB connected
 mongoose.connect(process.env.MONGO_URL,
 {

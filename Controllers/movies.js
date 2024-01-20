@@ -1,7 +1,7 @@
 import { Movie } from "../Modals/movies.js";
 
 
-export const addContact=async(req,res)=>{
+export const addMovie=async(req,res)=>{
     // res.json({message:"addContact is working..."})
     const {name,releaseYear,genre,imgUrl,director,actors,description,duration,language,rating,awards,boxOffice,releaseDate}=req.body;
     let movie=await Movie.findOne({name});
@@ -24,7 +24,7 @@ export const addContact=async(req,res)=>{
     res.json({message:'Movie Added',movie});
 }
 
-export const getContact=async(req,res)=>{
+export const getMovies=async(req,res)=>{
     const movie = await Movie.find();
     res.json({message:"All Movies..",movie});
 }
